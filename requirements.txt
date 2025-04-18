@@ -1,0 +1,29 @@
+# Core FastAPI and Server
+fastapi>=0.90.0 # Using lifespan requires >= 0.90
+uvicorn[standard]>=0.18.0 # Includes standard dependencies like httptools, websockets
+
+# RAG Core Dependencies
+sentence-transformers>=2.2.0
+faiss-cpu>=1.7.0 # Or faiss-gpu if using GPU
+PyPDF2>=3.0.0 # Check for latest stable version
+numpy>=1.21.0
+
+# LLM Dependencies
+transformers>=4.24.0 # Use a recent version
+torch>=1.12.0 # Or torch appropriate for your system/CUDA version
+accelerate>=0.15.0 # Often needed for device_map="auto" and efficient loading
+
+# Azure Blob Storage (Optional Feature)
+azure-storage-blob>=12.10.0
+
+# Document Analyzer Dependencies (Bonus Feature)
+pandas>=1.3.0
+openpyxl>=3.0.0 # Required by pandas for Excel writing
+
+# Configuration Helper
+python-dotenv>=0.20.0
+
+python-multipart
+
+# Add any other specific libraries you might need
+# Example: pip install loguru # If you prefer Loguru for logging
