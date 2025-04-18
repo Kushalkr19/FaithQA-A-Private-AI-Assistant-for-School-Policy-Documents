@@ -35,9 +35,27 @@ It also includes optional features for storing documents in Azure Blob Storage a
     * Detects potentially redundant content by comparing the similarity of text chunks using embeddings.
     * Outputs findings to an Excel file (`document_analysis.xlsx`).
 
-## Project Structure
+     ## Project Structure
 
-rag_llm_project/├── app/                  # Main application code│   ├── init.py       # Makes 'app' a Python package│   ├── config.py         # Configuration variables (reads from .env)│   ├── azure_blob_utils.py # Azure Blob Storage utilities│   ├── rag_core.py       # Core RAG logic (PDF processing, embedding, FAISS, LLM query)│   ├── document_analyzer.py # Bonus document analysis script│   └── main.py           # FastAPI application definition and endpoints├── .env.example          # Example environment variables -> COPY TO .env AND FILL IN!├── .gitignore            # Files/directories to ignore in Git (includes .env)├── requirements.txt      # Python package dependencies├── README.md             # This file└── faiss_index.idx       # Saved FAISS index (created after running) - Consider gitignoring└── chunks_data.pkl       # Saved chunks list (created after running) - Consider gitignoringOptional:└── uploads/              # Example directory for storing original PDFs if needed by analysis endpoint
+     ```plaintext
+     rag_llm_project/
+     ├── app/                  # Main application code
+     │   ├── __init__.py       # Makes 'app' a Python package
+     │   ├── config.py         # Configuration variables (reads from .env)
+     │   ├── azure_blob_utils.py # Azure Blob Storage utilities
+     │   ├── rag_core.py       # Core RAG logic (PDF processing, embedding, FAISS, LLM query)
+     │   ├── document_analyzer.py # Bonus document analysis script
+     │   └── main.py           # FastAPI application definition and endpoints
+     ├── .env.example          # Example environment variables -> COPY TO .env AND FILL IN!
+     ├── .gitignore            # Files/directories to ignore in Git (includes .env)
+     ├── requirements.txt      # Python package dependencies
+     ├── README.md             # This file
+     └── faiss_index.idx       # Saved FAISS index (created after running) - *Consider gitignoring*
+     └── chunks_data.pkl       # Saved chunks list (created after running) - *Consider gitignoring*
+     # Optional:
+     └── uploads/              # Example directory for storing original PDFs if needed by analysis endpoint
+     ```
+
 ## Setup Instructions
 
 1.  **Clone the Repository (or create files):**
